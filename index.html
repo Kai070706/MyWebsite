@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #fce4ec;
+    }
+    #loveText {
+      display: none;
+      font-size: 2em;
+      color: #e91e63;
+    }
+    #loveButton {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #loveButton:hover {
+      background-color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="loveButton">Click Me</button>
+  <div id="loveText">I love you</div>
+
+  <script>
+    document.getElementById("loveButton").addEventListener("click", function() {
+      this.style.display = "none";
+      document.getElementById("loveText").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
