@@ -8,13 +8,17 @@
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
-      background-color: #fce4ec;
+      background-color: navy;
+      color: white;
     }
+
     #loveText {
-      display: none;
+      opacity: 0;
       font-size: 2em;
-      color: #e91e63;
+      color: #ff80ab;
+      transition: opacity 2s ease;
     }
+
     #loveButton {
       padding: 10px 20px;
       font-size: 1.2em;
@@ -23,9 +27,16 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: transform 0.8s ease, opacity 0.8s ease;
     }
-    #loveButton:hover {
-      background-color: #d81b60;
+
+    #loveButton.hide {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+
+    #loveText.show {
+      opacity: 1;
     }
   </style>
 </head>
@@ -35,9 +46,16 @@
   <div id="loveText">I love you</div>
 
   <script>
-    document.getElementById("loveButton").addEventListener("click", function() {
-      this.style.display = "none";
-      document.getElementById("loveText").style.display = "block";
+    const button = document.getElementById("loveButton");
+    const text = document.getElementById("loveText");
+
+    button.addEventListener("click", function () {
+      button.classList.add("hide");
+
+      setTimeout(() => {
+        button.style.display = "none";
+        text.classList.add("show");
+      }, 800); // Wait for animation to finish before hiding and fading in
     });
   </script>
 
